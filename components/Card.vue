@@ -4,7 +4,7 @@ import checkContrast from "color-contrast-checker"
 import colors from "~/src/colors.json"
 const dsfrColors = ref(colors.colors)
 const props = defineProps(['name', 'hex', 'index', 'colors'])
-const displayFail = ref(false)
+const displayFail = ref(true)
 
 const isValide = (color) => {
   if(color.name == props.name) return false
@@ -41,7 +41,7 @@ $bus.$on('changeDisplay', (display) => {
       <Badge :valide="checkColorsAA(color.color, hex, 30)" segment="AA"/> <Badge :valide="checkColorsAAA(color.color, hex, 30)" segment="AAA"/>
     </div>
     <h2 class="text-3xl font-extrabold dark:text-white" :style="{color: hex}">
-      La VAE Rox!
+      La VAE Rox en {{name}}
     </h2>
     <div class="mt-6">
       <Badge :valide="checkColorsAA(color.color, hex, 20)" segment="AA"/> <Badge :valide="checkColorsAAA(color.color, hex, 20)" segment="AAA"/>
@@ -49,7 +49,7 @@ $bus.$on('changeDisplay', (display) => {
         Cras mattis consectetur purus sit amet fermentum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor. Donec sed odio dui.Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
       </p>
     </div>
-    <div class="flex mt-2">
+    <div class="flex mt-6">
       <p>Pas dispo pour l'instant</p>
       <button type="button" class="mr-2 inline-flex items-center rounded bg-white px-2.5 py-1 text-xs font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
