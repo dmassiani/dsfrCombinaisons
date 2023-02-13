@@ -4,7 +4,7 @@ import checkContrast from "color-contrast-checker"
 import colors from "~/src/colors.json"
 const dsfrColors = ref(colors.colors)
 const props = defineProps(['name', 'hex', 'index', 'colors'])
-const displayFail = ref(true)
+const displayFail = ref(false)
 
 const isValide = (color) => {
   if(color.name == props.name) return false

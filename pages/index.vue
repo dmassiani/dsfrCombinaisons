@@ -10,13 +10,11 @@ const colorsFromDSFR = computed(() => {
 })
 const prevPage = () => {
   page.value = page.value-1
-  console.log('prevpoage', page.value);
 }
 const nextPage = () => {
   page.value = page.value+1
-  console.log('next page', page.value);
 }
-const displayFail = ref(true)
+const displayFail = ref(false)
 
 const changeDisplay = () => {
   $bus.$emit('changeDisplay', displayFail.value)
