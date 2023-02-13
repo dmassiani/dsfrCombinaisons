@@ -34,7 +34,7 @@ const changeDisplay = () => {
     </div>
 
     <div class="transition flex justify-between z-40 bg-white shadow-xl rounded-full h-16 w-1/2 bottom-12 fixed left-1/2 transform -translate-x-1/2 p-2">
-      <button @click="prevPage" type="button" class="transition inline-flex items-center rounded-full border border-transparent bg-gray-300 px-5 py-2 text-base font-medium text-white shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+      <button @click="prevPage" type="button" class="transition inline-flex items-center rounded-full border border-transparent bg-gray-300 px-5 py-2 text-base font-medium text-black shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
           <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
         </svg>
@@ -48,7 +48,7 @@ const changeDisplay = () => {
           </label>
         </div>
       </div>
-      <button @click="nextPage" type="button" class="transition ml-2 inline-flex items-center rounded-full border border-transparent bg-gray-300 px-5 py-2 text-base font-medium text-white shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+      <button @click="nextPage" type="button" class="transition ml-2 inline-flex items-center rounded-full border border-transparent bg-gray-300 px-5 py-2 text-base font-medium text-black shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
           <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
         </svg>
