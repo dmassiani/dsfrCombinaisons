@@ -24,7 +24,7 @@ const changeDisplay = () => {
 <template>
 
   <!-- Wrapper-->
-  <div class="wrapper pt-5 pb-36">
+  <div class="flex-1 container max-w-7xl mx-auto pt-5 pb-36">
 
     <!-- Content grid -->
     <div class="box-border max-w-7xl mx-4 sm:columns-1 md:columns-2 lg:columns-3 xl:columns-3">
