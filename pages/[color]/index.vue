@@ -14,7 +14,7 @@ const changeDisplay = () => {
 
 <template>
   <!-- Wrapper-->
-  <div class="wrapper pt-5 pb-36">
+<div class="flex-1 container max-w-7xl mx-auto pt-5 pb-36">
 
     <nav class="flex p-4">
       <NuxtLink to="/" class="flex-inline">
