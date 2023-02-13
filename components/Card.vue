@@ -36,7 +36,7 @@ $bus.$on('changeDisplay', (display) => {
 <template>
 
   <article v-for="(color, index) in combinaisonsColors" :key="index" :style="{backgroundColor: color.color}"
-  class="shadow-xl mb-4 break-inside p-6 rounded-xl flex flex-col bg-clip-border">
+  class="break-inside-avoid shadow-xl mb-4 p-6 rounded-xl flex flex-col bg-clip-border">
     <div class="">
       <Badge :valide="checkColorsAA(color.color, hex, 30)" segment="AA"/> <Badge :valide="checkColorsAAA(color.color, hex, 30)" segment="AAA"/>
     </div>
