@@ -60,7 +60,7 @@ const addFavorie = async (bgColor, textColor) => {
     <div class="">
       <Badge :valide="checkColorsAA(color.background, color.text, 30)" segment="AA"/> <Badge :valide="checkColorsAAA(color.background, color.text, 30)" segment="AAA"/>
     </div>
-    <h2 class="text-3xl font-extrabold dark:text-white" :style="{color: color.color}">
+    <h2 class="text-3xl font-extrabold dark:text-white" :style="{color: color.text}">
       La VAE Rox en {{color.name}}
     </h2>
     <div class="mt-6">
