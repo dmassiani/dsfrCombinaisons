@@ -40,6 +40,10 @@ $bus.$on('changeDisplay', (display) => {
 
 <template>
 
+  <div class="" v-if="combinaisonsColors.length === 0">
+    Aucune couleur valide AA ou AAA avec {{name}}
+  </div>
+
   <article v-for="(color, index) in combinaisonsColors" :key="index" :style="{backgroundColor: color.color}"
   class="break-inside-avoid mb-4 p-6 rounded-xl flex flex-col bg-clip-border">
     <nav class="flex justify-end">
