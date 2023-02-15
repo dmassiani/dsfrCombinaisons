@@ -1,7 +1,7 @@
 <script setup>
 import colors from "~/src/colors.json"
 import _ from 'lodash'
-import chroma from "chroma-js";
+import chroma from "chroma-js"
 const { $bus } = useNuxtApp()
 useHead({
   bodyAttrs: {

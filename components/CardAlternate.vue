@@ -56,8 +56,8 @@ $bus.$on('changeDisplay', (display) => {
       <p :style="{color: color.color}">
         Cras mattis consectetur purus sit amet fermentum.
       </p>
-      <p>Text : {{hex}}</p>
-      <p>Background : {{color.color}}</p>
+      <p>Text : {{color.color}}</p>
+      <p>Background : {{alternateColor.color}}</p>
     </div>
     <div class="flex mt-6">
       <button @click="copyColor(color.color)" type="button" class="mr-2 inline-flex items-center rounded bg-white px-2.5 py-1 text-xs font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">

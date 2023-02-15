@@ -3,6 +3,7 @@ import _ from 'lodash'
 const { $bus } = useNuxtApp()
 import checkContrast from "color-contrast-checker"
 import { useApp } from '~/stores/app'
+import chroma from "chroma-js"
 const APP = useApp()
 const favories = ref(APP.getAllFavories)
 
@@ -23,6 +24,9 @@ const checkColorsAA = (a,b, size = 14) => {
 }
 const checkColorsAAA = (a,b, size = 14) => {
   return ContrastChecker.isLevelAAA(a,b,size)
+}
+const getContrast = (a,b) => {
+  return chroma.contrast(a, b)
 }
 const copyColor = (color) => {
   navigator.clipboard.writeText(color).then(function() {
@@ -50,7 +54,8 @@ const addFavorie = async (bgColor, textColor) => {
         <span class="sr-only">Favorie</span>
       </button>
       <NuxtLink :to="`${color.background.slice(1)}`" :style="{color: color.text}" class="inline-flex">
-        Alternate
+        <span>{{Math.round((getContrast(color.background, color.text) + Number.EPSILON) * 100) / 100}}</span>
+        <span class="ml-2">Alternate</span>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="ml-2 w-4 h-4">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
         </svg>
@@ -61,15 +66,23 @@ const addFavorie = async (bgColor, textColor) => {
       <Badge :valide="checkColorsAA(color.background, color.text, 30)" segment="AA"/> <Badge :valide="checkColorsAAA(color.background, color.text, 30)" segment="AAA"/>
     </div>
     <h2 class="text-3xl font-extrabold dark:text-white" :style="{color: color.text}">
-      La VAE Rox en {{color.name}}
+      Lorem ipsum
     </h2>
     <div class="mt-6">
       <Badge :valide="checkColorsAA(color.background, color.text, 20)" segment="AA"/> <Badge :valide="checkColorsAAA(color.background, color.text, 20)" segment="AAA"/>
       <p :style="{color: color.text}">
-        Cras mattis consectetur purus sit amet fermentum.
+        Cras mattis consectetur.
       </p>
-      <p>Text : {{hex}}</p>
-      <p>Background : {{color.color}}</p>
+      <p class="mt-2" :style="{color: color.text}">Text :
+        <strong @click="copyColor(color.text)">
+          {{color.text}}
+        </strong>
+      </p>
+      <p :style="{color: color.text}">Background :
+        <strong @click="copyColor(color.background)">
+          {{color.background}}
+        </strong>
+      </p>
     </div>
     <div class="flex mt-6">
       <button @click="copyColor(color.background)" type="button" class="mr-2 inline-flex items-center rounded bg-white px-2.5 py-1 text-xs font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
