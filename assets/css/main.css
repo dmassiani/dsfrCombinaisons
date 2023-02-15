@@ -5,3 +5,6 @@
 body {
   background-color: #F5F7F9;
 }
+#__nuxt{
+  height: 100%;
+}

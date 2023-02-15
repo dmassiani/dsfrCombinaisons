@@ -4,7 +4,7 @@ import checkContrast from "color-contrast-checker"
 import colors from "~/src/colors.json"
 const dsfrColors = ref(colors.colors)
 const props = defineProps(['name', 'hex', 'index', 'colors'])
-const displayFail = ref(true)
+const displayFail = ref(false)
 import { useApp } from '~/stores/app'
 const APP = useApp()
 
@@ -68,17 +68,21 @@ $bus.$on('changeDisplay', (display) => {
         </svg>
       </NuxtLink>
     </nav>
-    <div class="">
+    <h2 class="text-3xl font-extrabold dark:text-white" :style="{color: hex}">
+      Lorem ipsum dolor
+    </h2>
+    <div class="mt-2">
       <Badge :valide="checkColorsAA(color.color, hex, 30)" segment="AA"/> <Badge :valide="checkColorsAAA(color.color, hex, 30)" segment="AAA"/>
     </div>
-    <h2 class="text-3xl font-extrabold dark:text-white" :style="{color: hex}">
-      La VAE Rox en {{name}}
-    </h2>
     <div class="mt-6">
-      <Badge :valide="checkColorsAA(color.color, hex, 20)" segment="AA"/> <Badge :valide="checkColorsAAA(color.color, hex, 20)" segment="AAA"/>
       <p :style="{color: hex}">
-        Cras mattis consectetur purus sit amet fermentum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        Cras mattis consectetur purus sit amet fermentum.
       </p>
+      <p>Text : {{hex}}</p>
+      <p>Background : {{color.color}}</p>
+      <div class="mt-2">
+        <Badge :valide="checkColorsAA(color.color, hex, 20)" segment="AA"/> <Badge :valide="checkColorsAAA(color.color, hex, 20)" segment="AAA"/>
+      </div>
     </div>
     <div class="flex mt-6">
       <button @click="copyColor(hex)" type="button" class="mr-2 inline-flex items-center rounded bg-white px-2.5 py-1 text-xs font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
@@ -94,7 +98,6 @@ $bus.$on('changeDisplay', (display) => {
         </svg>
         Text color
       </button>
-
     </div>
   </article>
 

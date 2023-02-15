@@ -66,8 +66,10 @@ const addFavorie = async (bgColor, textColor) => {
     <div class="mt-6">
       <Badge :valide="checkColorsAA(color.background, color.text, 20)" segment="AA"/> <Badge :valide="checkColorsAAA(color.background, color.text, 20)" segment="AAA"/>
       <p :style="{color: color.text}">
-        Cras mattis consectetur purus sit amet fermentum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        Cras mattis consectetur purus sit amet fermentum.
       </p>
+      <p>Text : {{hex}}</p>
+      <p>Background : {{color.color}}</p>
     </div>
     <div class="flex mt-6">
       <button @click="copyColor(color.background)" type="button" class="mr-2 inline-flex items-center rounded bg-white px-2.5 py-1 text-xs font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">

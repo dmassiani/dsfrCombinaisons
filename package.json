@@ -16,12 +16,14 @@
     "@pinia-plugin-persistedstate/nuxt": "^1.0.0",
     "@pinia/nuxt": "^0.4.6",
     "autoprefixer": "^10.4.13",
+    "chroma-js": "^2.4.2",
     "color-contrast-checker": "^2.1.0",
     "lodash": "^4.17.21",
     "mitt": "^3.0.0",
     "pinia": "^2.0.30",
     "pinia-plugin-persist": "^1.0.0",
     "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.6"
+    "tailwindcss": "^3.2.6",
+    "vue-global-events": "^2.1.1"
   }
 }
